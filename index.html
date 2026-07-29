@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>312 Classic | Automobiles d'Exception La Baule</title>
+    <title>312 Classic | Spécialiste Automobile de Prestige - La Baule</title>
     
-    <!-- Bibliothèques : Tailwind pour le layout, GSAP pour les animations de luxe -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=Inter:wght@200;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=Inter:wght@200;400;600&display=swap" rel="stylesheet">
 
     <style>
         :root {
@@ -24,218 +23,222 @@
             overflow-x: hidden;
         }
 
-        h1, h2, h3, .serif {
-            font-family: 'Cormorant Garamond', serif;
-        }
+        h1, h2, h3, .serif { font-family: 'Cormorant Garamond', serif; }
 
-        /* Effet de grain vintage sur tout le site */
+        /* Grain texture pour le look vintage */
         body::before {
             content: "";
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
             background: url('https://grainy-gradients.vercel.app/noise.svg');
-            opacity: 0.04;
+            opacity: 0.05;
             pointer-events: none;
             z-index: 9999;
         }
 
         .gold-border { border-color: rgba(197, 160, 89, 0.3); }
         
-        .car-card:hover img {
-            transform: scale(1.05);
-            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
         .nav-link {
             position: relative;
-            transition: color 0.3s;
+            font-[10px] tracking-[0.2em] uppercase;
+            transition: opacity 0.3s;
         }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0; height: 1px;
-            bottom: -4px; left: 0;
-            background-color: var(--vintage-gold);
-            transition: width 0.3s;
-        }
-        .nav-link:hover::after { width: 100%; }
+        .nav-link:hover { color: var(--vintage-gold); }
 
-        /* Scrollbar élégante */
-        ::-webkit-scrollbar { width: 5px; }
-        ::-webkit-scrollbar-track { background: var(--vintage-black); }
-        ::-webkit-scrollbar-thumb { background: var(--vintage-gold); }
+        .btn-gold {
+            background-color: var(--vintage-gold);
+            color: black;
+            font-weight: bold;
+            padding: 1rem 2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 10px;
+            transition: all 0.3s;
+        }
+        .btn-gold:hover { background-color: white; }
+
+        .car-card img {
+            transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .car-card:hover img { transform: scale(1.05); }
     </style>
 </head>
 <body>
 
-    <!-- HEADER / NAV -->
-    <nav class="fixed w-full z-50 px-6 md:px-12 py-8 flex justify-between items-center bg-gradient-to-b from-[rgba(15,15,15,0.8)] to-transparent backdrop-blur-sm">
-        <div class="text-2xl font-light tracking-[0.3em] uppercase">
-            312 <span class="text-[#C5A059] font-bold">Classic</span>
+    <!-- NAVIGATION REPRENANT LES VRAIS LIENS -->
+    <nav class="fixed w-full z-50 px-6 md:px-12 py-6 flex justify-between items-center bg-[#0f0f0f]/90 backdrop-blur-md border-b border-white/5">
+        <div class="flex flex-col">
+            <span class="text-2xl font-light tracking-[0.3em] uppercase">312 <span class="text-[#C5A059] font-bold">Classic</span></span>
+            <span class="text-[8px] tracking-[0.4em] uppercase opacity-60">La Baule Escoublac</span>
         </div>
         
-        <div class="hidden md:flex space-x-12 text-[10px] uppercase tracking-[0.2em] font-medium">
-            <a href="#collection" class="nav-link">La Collection</a>
-            <a href="#vendre" class="nav-link">Vendre un véhicule</a>
-            <a href="#expertise" class="nav-link">L'Atelier</a>
+        <div class="hidden lg:flex space-x-10 text-[10px]">
+            <a href="#collection" class="nav-link">Le Stock</a>
+            <a href="#achat" class="nav-link">Achat / Dépôt-Vente</a>
+            <a href="#recherche" class="nav-link">Recherche Personnalisée</a>
+            <a href="#atelier" class="nav-link">L'Atelier</a>
             <a href="#contact" class="nav-link">Contact</a>
         </div>
 
-        <a href="tel:+33240000000" class="text-[10px] border border-[#C5A059] px-4 py-2 hover:bg-[#C5A059] hover:text-black transition duration-500">
-            PRENDRE RENDEZ-VOUS
-        </a>
+        <div class="flex items-center space-x-6">
+            <a href="tel:0240241626" class="hidden md:block text-[11px] font-bold tracking-widest">02 40 24 16 26</a>
+            <a href="#contact" class="border border-[#C5A059] px-5 py-2 text-[10px] tracking-tighter hover:bg-[#C5A059] hover:text-black transition">RDV PRIVÉ</a>
+        </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+    <!-- HERO SECTION : L'ESPRIT 312 CLASSIC -->
+    <section class="relative h-screen flex items-center justify-center pt-20">
         <div class="absolute inset-0 z-0">
-            <!-- Image de fond haute qualité (remplaçable par une vidéo) -->
-            <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=2070&auto=format&fit=crop" 
-                 class="w-full h-full object-cover opacity-50 shadow-2xl" alt="Vintage Sport Car">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] via-transparent to-transparent"></div>
+            <img src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?q=80&w=2070&auto=format&fit=crop" 
+                 class="w-full h-full object-cover opacity-40 grayscale" alt="Classic Car Background">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] via-transparent to-[#0f0f0f]/80"></div>
         </div>
 
-        <div class="relative z-10 text-center px-4">
-            <span class="block text-[#C5A059] uppercase tracking-[0.5em] text-xs mb-6 opacity-0 translate-y-4 reveal">Est. 2012 — La Baule</span>
-            <h1 class="text-6xl md:text-[120px] font-light italic leading-none mb-8 opacity-0 translate-y-4 reveal">
-                L'âme du <br> classique.
+        <div class="relative z-10 text-center px-4 max-w-5xl">
+            <span class="block text-[#C5A059] uppercase tracking-[0.6em] text-[10px] mb-8 reveal opacity-0">Passion • Expertise • Transmission</span>
+            <h1 class="text-5xl md:text-[100px] font-light italic leading-none mb-10 reveal opacity-0">
+                L'automobile de caractère <br> <span class="serif not-italic font-bold">depuis 2012.</span>
             </h1>
-            <div class="flex flex-col md:flex-row justify-center gap-6 mt-12 opacity-0 translate-y-4 reveal">
-                <a href="#collection" class="bg-[#C5A059] text-black px-10 py-5 text-[10px] font-bold uppercase tracking-widest">
-                    Découvrir l'inventaire
-                </a>
-                <a href="#vendre" class="border border-white/20 backdrop-blur-md px-10 py-5 text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition duration-500">
-                    Confier votre voiture
-                </a>
+            <p class="text-sm md:text-lg opacity-70 font-light max-w-2xl mx-auto mb-12 leading-relaxed reveal opacity-0">
+                Situé à La Baule, 312 Classic sélectionne pour vous des véhicules d'exception, de la sportive iconique à la classique de collection.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-6 reveal opacity-0">
+                <a href="#collection" class="btn-gold">Explorer le stock actuel</a>
+                <a href="#achat" class="border border-white/30 px-10 py-5 text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition">Vendre votre véhicule</a>
             </div>
         </div>
     </section>
 
-    <!-- SECTION COLLECTION -->
-    <section id="collection" class="py-32 px-6 md:px-12 bg-[#0f0f0f]">
-        <div class="flex flex-col md:flex-row justify-between items-baseline mb-20 border-b gold-border pb-8">
-            <h2 class="text-4xl md:text-6xl italic mb-4 md:mb-0">Dernières Acquisitions</h2>
-            <div class="flex space-x-6 text-[10px] uppercase tracking-widest opacity-60">
-                <button class="hover:text-[#C5A059] transition">Tout</button>
-                <button class="hover:text-[#C5A059] transition">Sportives</button>
-                <button class="hover:text-[#C5A059] transition">Grand Tourisme</button>
-                <button class="hover:text-[#C5A059] transition">Icônes</button>
+    <!-- SECTION STOCK : REPRODUCTION DE L'INVENTAIRE TYPE -->
+    <section id="collection" class="py-32 px-6 md:px-12">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 border-b gold-border pb-8">
+            <div>
+                <h2 class="text-5xl italic mb-2">La Sélection du Moment</h2>
+                <p class="text-xs uppercase tracking-widest opacity-40">Véhicules révisés et garantis</p>
             </div>
+            <a href="#" class="text-[10px] uppercase tracking-widest border-b border-[#C5A059] pb-1 hover:opacity-50 transition">Voir tout l'inventaire</a>
         </div>
 
-        <!-- GRID DES VOITURES -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            <!-- Voiture 1 -->
+            <div class="car-card group cursor-pointer">
+                <div class="relative overflow-hidden aspect-[4/3] mb-6 bg-[#1a1a1a]">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=1000" class="w-full h-full object-cover opacity-80 group-hover:opacity-100">
+                    <div class="absolute bottom-4 left-4 bg-black/80 px-3 py-1 text-[9px] tracking-widest">PORSCHE</div>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-2xl italic tracking-wide">911 Type 997 Carrera S</h3>
+                        <p class="text-[10px] uppercase tracking-widest opacity-40 mt-1">2005 • 82,000 KM • Gris Argent</p>
+                    </div>
+                    <span class="text-[#C5A059] font-bold">64.900 €</span>
+                </div>
+            </div>
+
+            <!-- Voiture 2 -->
+            <div class="car-card group cursor-pointer">
+                <div class="relative overflow-hidden aspect-[4/3] mb-6 bg-[#1a1a1a]">
+                    <img src="https://images.unsplash.com/photo-1566008885218-90abf9200ddb?auto=format&fit=crop&q=80&w=1000" class="w-full h-full object-cover opacity-80 group-hover:opacity-100">
+                    <div class="absolute bottom-4 left-4 bg-black/80 px-3 py-1 text-[9px] tracking-widest">JAGUAR</div>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-2xl italic tracking-wide">Type E Coupé 4.2L</h3>
+                        <p class="text-[10px] uppercase tracking-widest opacity-40 mt-1">1968 • Restauration Totale</p>
+                    </div>
+                    <span class="text-[#C5A059] font-bold">129.000 €</span>
+                </div>
+            </div>
+
+            <!-- Voiture 3 -->
+            <div class="car-card group cursor-pointer">
+                <div class="relative overflow-hidden aspect-[4/3] mb-6 bg-[#1a1a1a]">
+                    <img src="https://images.unsplash.com/photo-1592198084033-aade902d1aae?auto=format&fit=crop&q=80&w=1000" class="w-full h-full object-cover opacity-80 group-hover:opacity-100">
+                    <div class="absolute bottom-4 left-4 bg-black/80 px-3 py-1 text-[9px] tracking-widest">FERRARI</div>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-2xl italic tracking-wide">F430 F1 Coupé</h3>
+                        <p class="text-[10px] uppercase tracking-widest opacity-40 mt-1">2007 • Rosso Corsa</p>
+                    </div>
+                    <span class="text-[#C5A059] font-bold">142.000 €</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES RÉELS DU SITE -->
+    <section id="achat" class="py-32 bg-[#0a0a0a] px-6 md:px-12 border-y gold-border">
+        <div class="max-w-4xl mx-auto text-center mb-20">
+            <h2 class="text-5xl italic mb-6">Services sur-mesure</h2>
+            <p class="opacity-60 font-light">Au-delà de la vente, nous vous accompagnons dans chaque étape de votre vie d'automobiliste.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+            <div class="p-8 border border-white/5 hover:border-[#C5A059]/30 transition group">
+                <div class="w-12 h-[1px] bg-[#C5A059] mb-6"></div>
+                <h3 class="text-xl italic mb-4">Dépôt-Vente & Achat Cash</h3>
+                <p class="text-xs leading-relaxed opacity-50 mb-6">Nous valorisons votre véhicule grâce à une exposition premium et notre réseau de collectionneurs. Estimation gratuite sous 24h.</p>
+                <a href="#contact" class="text-[9px] uppercase tracking-widest text-[#C5A059]">En savoir plus →</a>
+            </div>
+
+            <div class="p-8 border border-white/5 hover:border-[#C5A059]/30 transition group">
+                <div class="w-12 h-[1px] bg-[#C5A059] mb-6"></div>
+                <h3 class="text-xl italic mb-4">Recherche Personnalisée</h3>
+                <p class="text-xs leading-relaxed opacity-50 mb-6">Vous cherchez un modèle précis ? Nous activons nos sources en Europe pour trouver la perle rare au meilleur prix.</p>
+                <a href="#contact" class="text-[9px] uppercase tracking-widest text-[#C5A059]">Lancer une recherche →</a>
+            </div>
+
+            <div class="p-8 border border-white/5 hover:border-[#C5A059]/30 transition group">
+                <div class="w-12 h-[1px] bg-[#C5A059] mb-6"></div>
+                <h3 class="text-xl italic mb-4">Expertise & Atelier</h3>
+                <p class="text-xs leading-relaxed opacity-50 mb-6">Passage au banc, fiabilisation, entretien courant et cosmétique. Votre voiture mérite une attention de spécialiste.</p>
+                <a href="#contact" class="text-[9px] uppercase tracking-widest text-[#C5A059]">Prendre RDV →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER COMPLET AVEC VRAIES INFOS -->
+    <footer id="contact" class="pt-32 pb-12 px-6 md:px-12 bg-[#0f0f0f]">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 mb-20">
+            <div>
+                <h2 class="text-6xl italic mb-10">Nous trouver <br> à La Baule.</h2>
+                <div class="space-y-6 text-sm font-light opacity-70">
+                    <p>312 CLASSIC<br>16 Avenue de la Ville ès Blais<br>44500 La Baule-Escoublac</p>
+                    <p>
+                        Email : <a href="mailto:contact@312classic.com" class="border-b border-[#C5A059]">contact@312classic.com</a><br>
+                        Tél : 02 40 24 16 26 / 06 14 02 44 44
+                    </p>
+                    <p class="text-[10px] uppercase tracking-widest pt-4">Ouvert du Lundi au Samedi sur rendez-vous.</p>
+                </div>
+            </div>
             
-            <!-- Carte Voiture 1 -->
-            <div class="car-card group">
-                <div class="relative overflow-hidden aspect-[16/10] mb-6">
-                    <img src="https://images.unsplash.com/photo-1592198084033-aade902d1aae?auto=format&fit=crop&q=80&w=1000" 
-                         class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition duration-700">
-                    <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1 text-[9px] tracking-widest">NOUVEAUTÉ</div>
-                </div>
-                <div class="flex justify-between items-start">
-                    <div>
-                        <h3 class="text-2xl italic mb-1 uppercase tracking-tight">Ferrari F430 Spider</h3>
-                        <p class="text-[10px] uppercase tracking-widest opacity-40">2006 • 34,500 KM • Manuelle</p>
-                    </div>
-                    <p class="text-[#C5A059] font-bold tracking-tighter">185.000 €</p>
-                </div>
-                <div class="mt-6 h-[1px] w-0 bg-[#C5A059] group-hover:w-full transition-all duration-700"></div>
-            </div>
-
-            <!-- Carte Voiture 2 -->
-            <div class="car-card group">
-                <div class="relative overflow-hidden aspect-[16/10] mb-6">
-                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=1000" 
-                         class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition duration-700">
-                </div>
-                <div class="flex justify-between items-start">
-                    <div>
-                        <h3 class="text-2xl italic mb-1 uppercase tracking-tight">Porsche 911 (930) Turbo</h3>
-                        <p class="text-[10px] uppercase tracking-widest opacity-40">1984 • État Concours</p>
-                    </div>
-                    <p class="text-[#C5A059] font-bold tracking-tighter">SUR DEMANDE</p>
-                </div>
-                <div class="mt-6 h-[1px] w-0 bg-[#C5A059] group-hover:w-full transition-all duration-700"></div>
-            </div>
-
-             <!-- Carte Voiture 3 -->
-             <div class="car-card group">
-                <div class="relative overflow-hidden aspect-[16/10] mb-6">
-                    <img src="https://images.unsplash.com/photo-1541443131876-44b03de101c5?auto=format&fit=crop&q=80&w=1000" 
-                         class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition duration-700">
-                </div>
-                <div class="flex justify-between items-start">
-                    <div>
-                        <h3 class="text-2xl italic mb-1 uppercase tracking-tight">Jaguar Type E V12</h3>
-                        <p class="text-[10px] uppercase tracking-widest opacity-40">1972 • Matching Numbers</p>
-                    </div>
-                    <p class="text-[#C5A059] font-bold tracking-tighter">115.000 €</p>
-                </div>
-                <div class="mt-6 h-[1px] w-0 bg-[#C5A059] group-hover:w-full transition-all duration-700"></div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- SECTION SERVICES / ARGUMENTS -->
-    <section id="expertise" class="py-24 bg-[#151515] px-6 md:px-12 border-y gold-border">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-20">
-            <div class="text-center">
-                <span class="text-[#C5A059] text-3xl mb-6 block">01</span>
-                <h4 class="text-xl italic mb-4">Sélection Rigoureuse</h4>
-                <p class="text-xs leading-relaxed opacity-60 font-light">Chaque véhicule est inspecté sur 110 points de contrôle pour garantir une transparence totale.</p>
-            </div>
-            <div class="text-center">
-                <span class="text-[#C5A059] text-3xl mb-6 block">02</span>
-                <h4 class="text-xl italic mb-4">Conciergerie Privée</h4>
-                <p class="text-xs leading-relaxed opacity-60 font-light">Nous gérons le transport, l'immatriculation et l'entretien de votre collection.</p>
-            </div>
-            <div class="text-center">
-                <span class="text-[#C5A059] text-3xl mb-6 block">03</span>
-                <h4 class="text-xl italic mb-4">Dépôt-Vente Premium</h4>
-                <p class="text-xs leading-relaxed opacity-60 font-light">Confiez-nous votre véhicule et profitez de notre réseau international de collectionneurs.</p>
+            <div class="bg-[#151515] p-10 gold-border border">
+                <h3 class="text-2xl italic mb-8">Nous contacter</h3>
+                <form class="grid grid-cols-1 gap-6">
+                    <input type="text" placeholder="NOM COMPLET" class="bg-transparent border-b border-white/10 py-3 text-[10px] focus:border-[#C5A059] outline-none transition">
+                    <input type="email" placeholder="VOTRE EMAIL" class="bg-transparent border-b border-white/10 py-3 text-[10px] focus:border-[#C5A059] outline-none transition">
+                    <textarea placeholder="VOTRE MESSAGE" rows="4" class="bg-transparent border-b border-white/10 py-3 text-[10px] focus:border-[#C5A059] outline-none transition"></textarea>
+                    <button class="btn-gold mt-4">Envoyer la demande</button>
+                </form>
             </div>
         </div>
-    </section>
 
-    <!-- FOOTER / CONTACT -->
-    <footer id="contact" class="py-32 px-6 md:px-12 text-center bg-[#0f0f0f]">
-        <h2 class="text-5xl md:text-7xl italic mb-12">Discutons de votre prochain <br> investissement.</h2>
-        <div class="mb-20">
-            <a href="mailto:contact@312classic.com" class="text-xl border-b border-[#C5A059] pb-2 hover:opacity-50 transition">contact@312classic.com</a>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 text-[10px] uppercase tracking-[0.3em] opacity-40">
-            <div>312 Classic Showroom - La Baule</div>
-            <div class="my-8 md:my-0">© 2024 — Tous droits réservés</div>
-            <div class="flex justify-center space-x-6">
-                <a href="#">Instagram</a>
-                <a href="#">Facebook</a>
+        <div class="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-white/5 text-[9px] uppercase tracking-[0.3em] opacity-40">
+            <p>© 2024 312 CLASSIC - TOUS DROITS RÉSERVÉS</p>
+            <div class="flex space-x-8 mt-6 md:mt-0">
+                <a href="#" class="hover:text-white">Instagram</a>
+                <a href="#" class="hover:text-white">Facebook</a>
+                <a href="#">Mentions Légales</a>
             </div>
         </div>
     </footer>
 
     <script>
-        // Animation au scroll (GSAP)
+        // Animations de révélation au chargement
         document.addEventListener("DOMContentLoaded", function() {
             gsap.to(".reveal", {
-                opacity: 1,
-                y: 0,
-                duration: 1.2,
-                stagger: 0.3,
-                ease: "power4.out",
-                delay: 0.5
-            });
-
-            // Smooth Scroll simple pour la navigation
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
+                opacity: 1, y: 0, duration: 1.2, stagger: 0.2, ease: "power4.out"
             });
         });
     </script>
